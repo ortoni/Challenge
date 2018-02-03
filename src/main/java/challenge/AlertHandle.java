@@ -22,7 +22,6 @@ public class AlertHandle {
 
 		driver.get("https://www.irctc.co.in/eticketing/loginHome.jsf");
 
-		String img = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
 		WebElement button = driver.findElementById("loginbutton");
 		button.click();
 		
