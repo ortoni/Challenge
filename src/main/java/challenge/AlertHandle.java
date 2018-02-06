@@ -14,8 +14,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class AlertHandle {
 	public static void main(String[] args) throws HeadlessException, IOException, AWTException {
 
-		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
 		ChromeOptions opt = new ChromeOptions();
+		
 		opt.setHeadless(false);
 		opt.addArguments("--maximize");
 		ChromeDriver driver = new ChromeDriver(opt);
