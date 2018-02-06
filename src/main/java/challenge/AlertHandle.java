@@ -27,7 +27,7 @@ public class AlertHandle {
 		button.click();
 		
 		
-		//DatePickerAndScroll.takeSnap();
+		DatePickerAndScroll.takeSnap();
 
 		Alert alt = driver.switchTo().alert();
 
