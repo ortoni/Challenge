@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="31440" started-at="2017-12-21T10:59:35Z" finished-at="2017-12-21T11:00:07Z">
+  <suite name="Default suite" duration-ms="45710" started-at="2018-02-06T05:47:01Z" finished-at="2018-02-06T05:47:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="31440" started-at="2017-12-21T10:59:35Z" finished-at="2017-12-21T11:00:07Z">
-      <class name="page.Insta">
-        <test-method status="PASS" signature="browser()[pri:0, instance:page.Insta@bbc1e0]" name="browser" duration-ms="16083" started-at="2017-12-21T16:29:35Z" finished-at="2017-12-21T16:29:52Z">
+    <test name="Default test" duration-ms="45710" started-at="2018-02-06T05:47:01Z" finished-at="2018-02-06T05:47:47Z">
+      <class name="challenge.Upload">
+        <test-method status="PASS" signature="main()[pri:0, instance:challenge.Upload@f777e8]" name="main" duration-ms="45577" started-at="2018-02-06T05:47:01Z" finished-at="2018-02-06T05:47:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- browser -->
-        <test-method status="PASS" signature="logIn()[pri:0, instance:page.Insta@bbc1e0]" name="logIn" duration-ms="3289" started-at="2017-12-21T16:29:52Z" finished-at="2017-12-21T16:29:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logIn -->
-        <test-method status="PASS" signature="mainPage()[pri:0, instance:page.Insta@bbc1e0]" name="mainPage" duration-ms="12046" started-at="2017-12-21T16:29:55Z" finished-at="2017-12-21T16:30:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mainPage -->
-      </class> <!-- page.Insta -->
+        </test-method> <!-- main -->
+      </class> <!-- challenge.Upload -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

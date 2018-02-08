@@ -7,10 +7,12 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class Upload {
+	@Test
 
-	public static void main(String[] args) throws AWTException, InterruptedException {
+	public  void main() throws AWTException, InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
