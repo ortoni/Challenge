@@ -17,7 +17,7 @@ public class GenericWrapper implements Wrapper{
 	int i = 1;
 
 	public void launchBrowser(String url) throws IOException {
-		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(url);	
