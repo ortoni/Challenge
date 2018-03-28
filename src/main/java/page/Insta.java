@@ -21,8 +21,8 @@ public class Insta extends GenericWrapper {
 	public void logIn() throws IOException, InterruptedException {
 		launchBrowser("https://www.instagram.com/");	
 		clickByLinkText("Log in");
-		enterByXpath("//input[@name='username']", "chatterjee_kous");
-		enterByXpath("//input[@name='password']", "Clashofclans@20");
+		enterByXpath("//input[@name='username']", "");
+		enterByXpath("//input[@name='password']", "");
 		clickByXpath("//button");	
 		clickByXpath("//a[contains(@class,'NavProfile')]");
 		clickByXpath("//a[contains(@href,'followers')]");
