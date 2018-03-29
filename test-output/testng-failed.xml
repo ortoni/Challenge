@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="challenge.DownloadFiles">
+      <class name="challenge.ZoomPage">
         <methods>
-          <include name="downloadFiles"/>
+          <include name="main"/>
         </methods>
-      </class> <!-- challenge.DownloadFiles -->
+      </class> <!-- challenge.ZoomPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

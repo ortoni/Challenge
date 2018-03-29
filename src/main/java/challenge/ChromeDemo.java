@@ -25,7 +25,7 @@ public class ChromeDemo {
 		ch.addArguments("--start-fullscreen");
 		ChromeDriver driver = new ChromeDriver(ch);
 
-		driver.get("http://www.naukri.com");
+		driver.get("http://www.google.com");
 		System.out.println(driver.getTitle());
 	}
 

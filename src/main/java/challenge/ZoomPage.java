@@ -9,9 +9,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class ZoomPage {
-	static ChromeDriver d ;
+	ChromeDriver d ;
 	@Test
 	public void main() throws IOException {
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
 		d = new ChromeDriver();
 		d.manage().window().maximize();
 		d.get("https://jqueryui.com/draggable/");

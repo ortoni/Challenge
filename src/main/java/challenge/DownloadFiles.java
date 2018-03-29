@@ -15,6 +15,7 @@ public class DownloadFiles {
 	DesiredCapabilities cap;
 	@SuppressWarnings("deprecation")
 	public void downloadFiles()	{
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 
 		String downloadFilepath = "K:\\";
@@ -26,7 +27,7 @@ public class DownloadFiles {
 		options.setExperimentalOption("prefs", setPath);
 		options.addArguments("--disable-extensions"); //to disable browser extension popup
 		
-		cap = DesiredCapabilities.chrome();
+		cap = DesiredCapabilities.chrome(); //Adding capabilities
 		cap.setCapability(ChromeOptions.CAPABILITY, chromeOptionsMap);
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 

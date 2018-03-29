@@ -6,20 +6,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Franklin {
 	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://www.franklintempleton.com/");
 		
-		//using link text - wont work
-		driver.findElementByLinkText("Close").click();
+		//using link text - wont work - As available in the DOM
+		driver.findElementByLinkText("Equity").click();
 		
 		// --- Or using the text visible in webPage-->>>	(works)
-		//driver.findElementByLinkText("CLOSE").click();
+		//driver.findElementByLinkText("EQUITY").click();
 		
 		
 		// Using Xpath (works)
-		//driver.findElementByXPath("//a[text()='Close']").click();
+		//driver.findElementByXPath("//a[text()='Equity']").click();
+		driver.quit();
 	}
 
 }
