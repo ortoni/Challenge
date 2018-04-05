@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
-
 public class DownloadFiles {
 	RemoteWebDriver driver;
 	ChromeOptions options;
