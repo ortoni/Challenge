@@ -12,8 +12,10 @@ public class DownloadFiles {
 	String downloadFilepath = "K:\\";
 	HashMap<String, Object> prefs;
 	@Test
-	public void downloadFiles()	{
+	public void downloadFiles() throws InterruptedException	{
 		options	 = new ChromeOptions();
+		
+		//options.setHeadless(true);
 		// To put preferences using "prefs" (KeyWord)
 		prefs = new HashMap<String, Object>();	
 		//To set path
@@ -21,7 +23,7 @@ public class DownloadFiles {
 		// To disable security check (keep or Cancel)
 		prefs.put("safebrowsing.enabled", "false"); 
 		//to download PDF, pdf plugin is turning off
-		options.addArguments("plugins.plugins_disabled", "Chrome PDF Viewer"); 
+		//options.addArguments("plugins.plugins_disabled", "Chrome PDF Viewer"); 
 		// Adding preferences to ChromeOptions
 		options.setExperimentalOption("prefs", prefs); 
 		//to disable window browser
@@ -31,5 +33,6 @@ public class DownloadFiles {
 		driver.manage().window().maximize();
 		driver.get("https://www.win-rar.com/predownload.html");
 		driver.findElementByLinkText("Download WinRAR").click();
+		Thread.sleep(25000);
 	}
 }

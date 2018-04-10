@@ -2,16 +2,15 @@ package challenge;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class DownloadPDFFF {
 
-	public static void main(String[] args) throws InterruptedException {
-
-		
-		FirefoxProfile profile = new FirefoxProfile();
+	public static void main(String[] args) throws InterruptedException {		
+		FirefoxProfile profile = new FirefoxProfile();		
 		profile.setPreference("browser.download.dir","K:\\");
 		profile.setPreference("browser.download.folderList", 2);
 		profile.setPreference("browser.download.manager.skipWinSecurityPolicyChecks", false);
@@ -32,16 +31,16 @@ public class DownloadPDFFF {
 		profile.setPreference("browser.helperApps.alwaysAsk.force", false);
 		// System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
 		FirefoxOptions options = new FirefoxOptions();
+		options.setHeadless(true);
 		FirefoxOptions profile1 = options.setProfile(profile);
 		FirefoxDriver driver = new FirefoxDriver(profile1);
-
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://enos.itcollege.ee/~jpoial/allalaadimised/reading/");
-		/*WebElement pdf = driver.findElementByLinkText("Advanced-java.pdf");
-		pdf.click();*/
-		driver.get("https://www.win-rar.com/predownload.html");
-		driver.findElementByLinkText("Download WinRAR").click();
+		WebElement pdf = driver.findElementByLinkText("Advanced-java.pdf");
+		pdf.click();
+		/*driver.get("https://www.win-rar.com/predownload.html");
+		driver.findElementByLinkText("Download WinRAR").click();*/
 		Thread.sleep(5000);
 
 
