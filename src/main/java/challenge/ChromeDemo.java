@@ -7,7 +7,11 @@ public class ChromeDemo {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
-		ChromeOptions ch = new ChromeOptions();
+		ChromeOptions op = new ChromeOptions();
+		op.addArguments("--disable-notifications");
+		ChromeDriver driver = new ChromeDriver(op);
+
+		
 
 		// Headless mode
 		//ch.setHeadless(true);
@@ -22,8 +26,7 @@ public class ChromeDemo {
 		//ch.addArguments("start-maximized");
 
 		//To run the browser in full screen
-		ch.addArguments("--start-fullscreen");
-		ChromeDriver driver = new ChromeDriver(ch);
+	
 
 		driver.get("http://www.google.com");
 		System.out.println(driver.getTitle());
