@@ -28,7 +28,6 @@ ChromeDriver driver;
 
 	public void elementScreenshot(WebElement ele) throws IOException {
 		File screenshotAs = driver.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshotAs, new File("./Snap/snap.jpg"));
 		int x = ele.getLocation().getX();
 		int y = ele.getLocation().getY();
 		int width = ele.getSize().getWidth();
