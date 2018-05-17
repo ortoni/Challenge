@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16423" started-at="2018-05-04T10:51:42Z" finished-at="2018-05-04T10:51:58Z">
+  <suite name="Default suite" duration-ms="25555" started-at="2018-05-17T09:22:14Z" finished-at="2018-05-17T09:22:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16423" started-at="2018-05-04T10:51:42Z" finished-at="2018-05-04T10:51:58Z">
-      <class name="challenge.ZoomPage">
-        <test-method status="PASS" signature="main()[pri:0, instance:challenge.ZoomPage@100d6b1]" name="main" duration-ms="16366" started-at="2018-05-04T10:51:42Z" finished-at="2018-05-04T10:51:58Z">
+    <test name="Default test" duration-ms="25555" started-at="2018-05-17T09:22:14Z" finished-at="2018-05-17T09:22:40Z">
+      <class name="challenge.ElementSnap">
+        <test-method status="PASS" signature="main()[pri:0, instance:challenge.ElementSnap@d818d1]" name="main" duration-ms="25444" started-at="2018-05-17T09:22:14Z" finished-at="2018-05-17T09:22:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->
-      </class> <!-- challenge.ZoomPage -->
+      </class> <!-- challenge.ElementSnap -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -20,8 +20,8 @@ ChromeDriver driver;
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://www.irctc.co.in/eticketing/loginHome.jsf");
-		WebElement button = driver.findElementById("loginbutton");
+		driver.get("http://leaftaps.com/opentaps/control/main");
+		WebElement button = driver.findElementByClassName("decorativeSubmit");
 		elementScreenshot(button);
 		driver.quit();
 	}
