@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25555" started-at="2018-05-17T09:22:14Z" finished-at="2018-05-17T09:22:40Z">
+  <suite name="Default suite" duration-ms="10337" started-at="2018-05-18T06:16:02Z" finished-at="2018-05-18T06:16:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25555" started-at="2018-05-17T09:22:14Z" finished-at="2018-05-17T09:22:40Z">
-      <class name="challenge.ElementSnap">
-        <test-method status="PASS" signature="main()[pri:0, instance:challenge.ElementSnap@d818d1]" name="main" duration-ms="25444" started-at="2018-05-17T09:22:14Z" finished-at="2018-05-17T09:22:39Z">
+    <test name="Default test" duration-ms="10337" started-at="2018-05-18T06:16:02Z" finished-at="2018-05-18T06:16:12Z">
+      <class name="challenge.RegionSnap">
+        <test-method status="PASS" signature="main()[pri:0, instance:challenge.RegionSnap@d818d1]" name="main" duration-ms="10306" started-at="2018-05-18T06:16:02Z" finished-at="2018-05-18T06:16:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- main -->
-      </class> <!-- challenge.ElementSnap -->
+      </class> <!-- challenge.RegionSnap -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
