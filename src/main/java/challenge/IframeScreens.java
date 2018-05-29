@@ -11,12 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class AlertSnap {
+public class IframeScreens {
 	static int i=200;
 	@Test
 	public void alertSnap() throws IOException, AWTException, InterruptedException{
@@ -24,26 +24,18 @@ public class AlertSnap {
 		ChromeDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get("https://www.irctc.co.in/eticketing/loginHome.jsf");
+		driver.get("https://jqueryui.com/draggable/");
+		driver.switchTo().frame(0);
 		File screenshotAs = driver.getScreenshotAs(OutputType.FILE);
-		WebElement left = driver.findElementByXPath("//div[@class='grid_7']/img");
-		WebElement right =driver.findElementByXPath("//div[@class='grid_9']/img");
-		int y = right.getLocation().getY();
-		int y2 = left.getLocation().getY();
-		int x2 = left.getLocation().getX();
-		WebElement bottom = driver.findElementByXPath("//marquee");
-		int x = bottom.getLocation().getX();
-		driver.findElementById("loginbutton").click();	
-
-		Thread.sleep(2000);
-
-		driver.switchTo().alert().accept();
-		Thread.sleep(2000);
+		FileUtils.copyFile(screenshotAs, new File("./snap/a.jpg"));
+	}
+	public void takeSnap() throws IOException, AWTException {
 		BufferedImage img = new Robot()
 				.createScreenCapture(
 						new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-		driver.quit();
+		BufferedImage subimage = img.getSubimage(i, i, i, i);
+		ImageIO.write(subimage, "png", new File("./snap/"+i+".png"));
+		i++;
 	}
-
 
 }
