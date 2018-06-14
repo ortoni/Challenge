@@ -29,7 +29,7 @@ public class DownloadFiles2 {
 	public void downloadFiles() throws InterruptedException, UnknownHostException, MalformedURLException	{
 		ChromeOptions options =  new ChromeOptions();
 		HashMap<String, Object> setPath = new HashMap<String, Object>();	
-		File file = new File("E:download\\"+generateRandomFolderName());
+		File file = new File("C:\\Users\\dell\\Downloads");
 		setPath.put("download.default_directory", file); //To set path
 		setPath.put("safebrowsing.enabled", "false"); // To disable security check
 
@@ -44,8 +44,8 @@ public class DownloadFiles2 {
 		dc.setVersion("ANY");
 		dc.setPlatform(Platform.WINDOWS);
 
-		driver = new RemoteWebDriver(
-				new URL("http://192.168.54.15:4444/wd/hub"), dc);
+	driver = new RemoteWebDriver(
+				new URL("http://localhost:4444/wd/hub"), dc);
 		driver.manage().window().maximize();
 		driver.get("https://www.win-rar.com/predownload.html");
 		System.out.println(InetAddress.getLocalHost().getHostAddress());
