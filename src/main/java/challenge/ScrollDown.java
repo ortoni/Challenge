@@ -11,7 +11,7 @@ public class ScrollDown {
 		driver.manage().window().maximize();
 		driver.get("https://www.naukri.com/");
 		int y = driver.findElementByLinkText("Browse All Jobs").getLocation().getY();
-		driver.executeScript("scroll(0,"+y+");", "");
+		driver.executeScript("scroll(0,"+y+");");
 		
 	}
 }
