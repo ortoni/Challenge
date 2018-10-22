@@ -34,7 +34,7 @@ public class SeMethods extends Report implements WdMethods{
 				//System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 				driver = new ChromeDriver();
 			} else if (browser.equalsIgnoreCase("ff")){
-				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
+//				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
 			}
 			driver.get(url);
