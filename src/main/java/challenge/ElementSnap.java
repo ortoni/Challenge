@@ -7,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
-import org.apache.maven.shared.utils.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,7 +27,7 @@ public class ElementSnap {
 		WebElement button = driver.findElementByClassName("decorativeSubmit");
 		File src = button.getScreenshotAs(OutputType.FILE);
 		File dst = new File("./snaps/im.png");
-		FileUtils.copyFile(src, dst);
+//		FileUtils.copyFile(src, dst);
 		
 		
 		
