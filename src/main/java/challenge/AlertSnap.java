@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
+import org.apache.maven.shared.utils.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,23 +26,12 @@ public class AlertSnap {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://www.irctc.co.in/eticketing/loginHome.jsf");
-		File screenshotAs = driver.getScreenshotAs(OutputType.FILE);
-		WebElement left = driver.findElementByXPath("//div[@class='grid_7']/img");
-		WebElement right =driver.findElementByXPath("//div[@class='grid_9']/img");
-		int y = right.getLocation().getY();
-		int y2 = left.getLocation().getY();
-		int x2 = left.getLocation().getX();
-		WebElement bottom = driver.findElementByXPath("//marquee");
-		int x = bottom.getLocation().getX();
-		driver.findElementById("loginbutton").click();	
-
-		Thread.sleep(2000);
-
+		driver.findElementByXPath("//span[text()='AGENT LOGIN']").click();
+		driver.findElementById("loginbutton").click();
+		File src = driver.getScreenshotAs(OutputType.FILE);
+		File dst = new File("./snaps/alert.png");
+		FileUtils.copyFile(src, dst);
 		driver.switchTo().alert().accept();
-		Thread.sleep(2000);
-		BufferedImage img = new Robot()
-				.createScreenCapture(
-						new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
 		driver.quit();
 	}
 

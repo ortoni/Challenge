@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.io.FileUtils;
+import org.apache.maven.shared.utils.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,13 +20,28 @@ public class ElementSnap {
 	@Test
 	public void main() throws IOException {
 		options = new ChromeOptions();
-		options.setHeadless(true);
+		options.setHeadless(false);
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("http://leaftaps.com/opentaps/control/main");
 		WebElement button = driver.findElementByClassName("decorativeSubmit");
-		elementScreenshot(button);
+		File src = button.getScreenshotAs(OutputType.FILE);
+		File dst = new File("./snaps/im.png");
+		FileUtils.copyFile(src, dst);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//elementScreenshot(button);
 		driver.quit();
 	}
 
