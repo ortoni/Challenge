@@ -14,7 +14,6 @@ public class DownloadFiles {
 	@Test
 	public void downloadFiles() throws InterruptedException	{
 		options	 = new ChromeOptions();
-		
 		//options.setHeadless(true);
 		// To put preferences using "prefs" (KeyWord)
 		prefs = new HashMap<String, Object>();	

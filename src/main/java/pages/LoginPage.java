@@ -29,7 +29,7 @@ public class LoginPage extends ProjectMethods {
 	}
 	@FindBy(className="decorativeSubmit")
 	WebElement eleLogin;
-	@When("Click on login button")
+@When("Click on login button")
 	public HomePage clickLogin() {
 		click(eleLogin);
 		return new HomePage();		

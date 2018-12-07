@@ -1,12 +1,16 @@
 package challenge;
 
 import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
+import javax.imageio.ImageIO;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -21,11 +25,13 @@ public class AlertSnap {
 		driver.get("https://www.irctc.co.in/eticketing/loginHome.jsf");
 		driver.findElementByXPath("//span[text()='AGENT LOGIN']").click();
 		driver.findElementById("loginbutton").click();
-		File src = driver.getScreenshotAs(OutputType.FILE);
-		File dst = new File("./snaps/alert.png");
-		FileUtils.copyFile(src, dst);
-		driver.switchTo().alert().accept();
-		driver.quit();
+		Thread.sleep(1000);
+		// take snap		
+		BufferedImage image = new Robot().createScreenCapture
+		(new Rectangle(
+				Toolkit.getDefaultToolkit().getScreenSize()));
+		
+		ImageIO.write(image, "png", new File("./snaps/Alert.png"));
 	}
 
 
