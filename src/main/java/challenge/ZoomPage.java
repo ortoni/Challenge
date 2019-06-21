@@ -5,7 +5,6 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -21,7 +20,7 @@ public class ZoomPage {
 		// WebElement drag = d.findElementByLinkText("Draggable");
 		takeSnap();
 		driver.switchTo().frame(0);
-		driver.executeScript("document.body.style.zoom='170%'", "");
+		driver.executeScript("document.body.style.zoom='170%'");
 		takeSnap();
 		// d.quit();
 	}

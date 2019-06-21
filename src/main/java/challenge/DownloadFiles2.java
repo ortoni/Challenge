@@ -13,39 +13,41 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
+
 public class DownloadFiles2 {
 	RemoteWebDriver driver;
 	ChromeOptions options;
 	Capabilities caps;
 	DesiredCapabilities dc;
 	HashMap<String, Object> prefs;
+
 	public String generateRandomFolderName() {
-		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L; 
+		long number = (long) Math.floor(Math.random() * 900000000L) + 10000000L;
 		String folderName = Long.toString(number);
-		return  folderName;
+		return folderName;
 	}
 
 	@Test
-	public void downloadFiles() throws InterruptedException, UnknownHostException, MalformedURLException	{
-		ChromeOptions options =  new ChromeOptions();
-		HashMap<String, Object> setPath = new HashMap<String, Object>();	
+	public void downloadFiles() throws InterruptedException, UnknownHostException, MalformedURLException {
+		ChromeOptions options = new ChromeOptions();
+		HashMap<String, Object> setPath = new HashMap<String, Object>();
 		File file = new File("C:\\Users\\dell\\Downloads");
-		setPath.put("download.default_directory", file); //To set path
+		System.out.println(file);
+		setPath.put("download.default_directory", file.getAbsolutePath()); // To set path
 		setPath.put("safebrowsing.enabled", "false"); // To disable security check
 
 		HashMap<String, Object> chromeOptionsMap = new HashMap<String, Object>();
 		options.setExperimentalOption("prefs", setPath);
 		options.addArguments("--disable-extensions");
 
-		dc = DesiredCapabilities.chrome(); //Adding capabilities
+		dc = DesiredCapabilities.chrome(); // Adding capabilities
 		dc.setCapability(ChromeOptions.CAPABILITY, chromeOptionsMap);
 		dc.setCapability(ChromeOptions.CAPABILITY, options);
 
 		dc.setVersion("ANY");
 		dc.setPlatform(Platform.WINDOWS);
 
-	driver = new RemoteWebDriver(
-				new URL("http://localhost:4444/wd/hub"), dc);
+		driver = new RemoteWebDriver(new URL("http://192.168.1.8:4445/wd/hub"), dc);
 		driver.manage().window().maximize();
 		driver.get("https://www.win-rar.com/predownload.html");
 		System.out.println(InetAddress.getLocalHost().getHostAddress());
@@ -53,10 +55,7 @@ public class DownloadFiles2 {
 		System.out.println(System.getProperty("os.name"));
 		System.out.println(System.getProperty("user.name"));
 		driver.findElementByLinkText("Download WinRAR").click();
-		//Thread.sleep(25000);
-
-
-
+		// Thread.sleep(25000);
 
 	}
 }
